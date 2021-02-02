@@ -9,19 +9,35 @@
 
 $to = [
     'j.conan@fondationface.org',
-    ...
+    'besson.mikael04@gmail.com',
 ];
+$subject ="test envoie mail";
 
-$html = '
-    <html lang="fr">
+
+
+$html = "
+    <html lang='fr'>
         <head>
             <title>Mes actualités</title>
         </head>
         <body>
             <div>
-                <!-- Vos actualités ici -->
+            Lors d'une interview pour la chaîne 'Good Morning America', le réalisateur Jon Favreau a donné plus
+             d'informations sur la suite des aventures de Boba Fett sur Disney+. 
+  
             </div>
         </body>
     </html>
-';
+";
+
+mail($to, $subject, $html);
+if (mail($to, $subject, $html))
+{
+    echo "Message envoyé avec succès !";
+}
+else
+{
+    echo "Erreur. Le message ne peut pas être envoyé.";
+}
+
 
